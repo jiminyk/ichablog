@@ -4,18 +4,18 @@ import Layout from '../components/layout'
 
 const PostTemplate = ({ data }) => (
   <Layout>
-    <h1>{data.strapiPost.Title}</h1>
-    <p>{data.strapiPost.Article}</p>
+    <h1>{data.strapiArticle.title}</h1>
+    <p>{data.strapiArticle.content}</p>
   </Layout>
 )
 
-export default PostTemplate
+export default ArticleTemplate
 
 export const query = graphql`
-  query PostTemplate($id: String!) {
+  query ArticleTemplate($id: String!) {
     strapiPost(id: {eq: $id}) {
-        Title
-        Article
+        title
+        content
     }
   }
 `

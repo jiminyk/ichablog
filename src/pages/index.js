@@ -5,12 +5,12 @@ import Layout from '../components/layout'
 const IndexPage = ({ data }) => (
   <Layout>
     <ul>
-      {data.allStrapiPost.edges.map(document => (
+      {data.allStrapiArticle.edges.map(document => (
         <li key={document.node.id}>
           <h2>
-            <Link to={`/${document.node.id}`}>{document.node.Title}</Link>
+            <Link to={`/${document.node.id}`}>{document.node.title}</Link>
           </h2>
-          <p>{document.node.Article}</p>
+          <p>{document.node.content}</p>
         </li>
       ))}
     </ul>
@@ -25,8 +25,8 @@ export const pageQuery = graphql`
       edges {
         node {
           id
-          Title
-          Article
+          title
+          content
         }
       }
     }
