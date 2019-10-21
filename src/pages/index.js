@@ -21,7 +21,7 @@ export default IndexPage
 
 export const pageQuery = graphql`  
   query IndexQuery {
-    allStrapiPost {
+    allStrapiArticle {
       edges {
         node {
           id

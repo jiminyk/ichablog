@@ -2,7 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../components/layout' 
 
-const PostTemplate = ({ data }) => (
+const ArticleTemplate = ({ data }) => (
   <Layout>
     <h1>{data.strapiArticle.title}</h1>
     <p>{data.strapiArticle.content}</p>
