@@ -1,9 +1,12 @@
 .indexArticle {
     max-height: 250px;
     overflow: hidden;
-    list-style: none;
 }
 
 .indexArticle img {
     display: none;
+}
+
+ul {
+    list-style: none;
 }
