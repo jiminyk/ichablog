@@ -4,6 +4,8 @@ import Img from 'gatsby-image'
 import Layout from '../components/layout'
 import ReactMarkdown from 'react-markdown'
 
+import "../styles/global.css"
+
 const ArticleTemplate = ({ data }) => (
   <Layout>
     <h1>{data.strapiArticle.title}</h1>
