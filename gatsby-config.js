@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: 'Ichablog',
-    description: 'Gatsby blog with Strapi CMS API',
+    title: 'Digimon ReArise',
+    description: 'Content API for tips tricks and guides - Digimon ReArise',
     author: 'Christian Gomez'
   },
   plugins: [
