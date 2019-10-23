@@ -18,9 +18,9 @@ const makeRequest = (graphql, request) => new Promise((resolve, reject) => {
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions;
   
-  const getArticles = makeRequest(graphql, `
+  const getDigimons = makeRequest(graphql, `
     {
-      allStrapiArticle {
+      allStrapiDigimon {
         edges {
           node {
             id
@@ -30,10 +30,10 @@ exports.createPages = ({ actions, graphql }) => {
     }
     `).then(result => {
     // Create pages for each article.
-    result.data.allStrapiArticle.edges.forEach(({ node }) => {
+    result.data.allStrapiDigimon.edges.forEach(({ node }) => {
       createPage({
         path: `/${node.id}`,
-        component: path.resolve(`src/templates/article.js`),
+        component: path.resolve(`src/templates/digimon.js`),
         context: {
           id: node.id,
         },
@@ -42,5 +42,5 @@ exports.createPages = ({ actions, graphql }) => {
   });
   
   // Query for articles nodes to use in creating pages.
-  return getArticles;
+  return getDigimons;
 };

@@ -2,26 +2,18 @@ import React from 'react'
 import { Link, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import Layout from '../components/layout'
-import ReactMarkdown from 'react-markdown'
 
 import "../styles/global.css"
 
 const IndexPage = ({ data }) => (
   <Layout>
     <ul>
-      {data.allStrapiArticle.edges.map(document => (
+      {data.allStrapiDigimon.edges.map(document => (
         <li key={document.node.id}>
+          <Img fixed={document.node.thumbnail.childImageSharp.fixed} />
           <h2>
-            <Link to={`/${document.node.id}`}>{document.node.title}</Link>
+            <Link to={`/${document.node.id}`}>{document.node.name}</Link>
           </h2>
-          <Img fixed={document.node.image.childImageSharp.fixed} />
-          <ReactMarkdown 
-            source={document.node.content.substring(0,500).concat("...")} 
-            transformImageUri={uri => uri.startsWith('http') ? uri : `${process.env.IMAGE_BASE_URL}${uri}`}
-            className="indexArticle"
-          />
-          
-          <Link to={`/${document.node.id}`}>Read more</Link>
         </li>
       ))}
     </ul>
@@ -32,15 +24,14 @@ export default IndexPage
 
 export const pageQuery = graphql`  
   query IndexQuery {
-    allStrapiArticle {
+    allStrapiDigimon {
       edges {
         node {
           id
-          title
-          content
-          image {
+          name
+          thumbnail {
             childImageSharp {
-              fixed(width: 125, height: 125) {
+              fixed(width: 100, height: 100) {
                 ...GatsbyImageSharpFixed
               }
             }
