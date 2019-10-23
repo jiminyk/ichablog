@@ -10,7 +10,7 @@ const IndexPage = ({ data }) => (
     <ul>
       {data.allStrapiDigimon.edges.map(document => (
         <li key={document.node.id}>
-          <Img fixed={document.node.thumbnail.childImageSharp.fixed} />
+          <Img fixed={document.node.image.childImageSharp.fixed} />
           <h2>
             <Link to={`/${document.node.id}`}>{document.node.name}</Link>
           </h2>
@@ -29,7 +29,7 @@ export const pageQuery = graphql`
         node {
           id
           name
-          thumbnail {
+          image {
             childImageSharp {
               fixed(width: 100, height: 100) {
                 ...GatsbyImageSharpFixed
