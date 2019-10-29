@@ -7,13 +7,13 @@ import "../styles/global.css"
 
 const IndexPage = ({ data }) => (
   <Layout>
-    <ul>
+    <ul className="container" >
       {data.allStrapiDigimon.edges.map(document => (
-        <li key={document.node.id}>
+        <li key={document.node.id} className="item">
           <Img fixed={document.node.digimon_image.childImageSharp.fixed} />
-          <h2>
+          <h4>
             <Link to={`/${document.node.id}`}>{document.node.name}</Link>
-          </h2>
+          </h4>
         </li>
       ))}
     </ul>
@@ -24,19 +24,14 @@ export default IndexPage
 
 export const pageQuery = graphql`  
   query IndexQuery {
-    allStrapiDigimon(
-      sort: {
-        fields: [id]
-        order: ASC
-      }
-    ) {
+    allStrapiDigimon {
       edges {
         node {
           id
           name
           digimon_image {
             childImageSharp {
-              fixed(width: 100, height: 100) {
+              fixed(width: 75, height: 75) {
                 ...GatsbyImageSharpFixed
               }
             }

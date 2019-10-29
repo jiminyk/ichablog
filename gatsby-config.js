@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: 'Digimon ReArise',
+    title: 'DigimonDB',
     description: 'Content API for tips tricks and guides - Digimon ReArise',
     author: 'Christian Gomez'
   },

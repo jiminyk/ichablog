@@ -1,12 +1,15 @@
-.indexArticle {
-    max-height: 250px;
-    overflow: hidden;
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
-.indexArticle img {
-    display: none;
-}
-
-ul {
+.item {
+    flex-basis: 25%;
     list-style: none;
+    text-align: center;
+    margin-bottom: 75px;
 }
+
+
