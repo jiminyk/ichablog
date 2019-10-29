@@ -7,7 +7,7 @@ import "../styles/global.css"
 
 const DigimonTemplate = ({ data }) => (
   <Layout>
-    <Img fixed={data.strapiDigimon.image.childImageSharp.fixed} />
+    <Img fixed={data.strapiDigimon.digimon_image.childImageSharp.fixed} />
     <h1>{data.strapiDigimon.name}</h1>
   </Layout>
 )
@@ -18,7 +18,7 @@ export const query = graphql`
   query DigimonTemplate($id: String!) {
     strapiDigimon(id: {eq: $id}) {
       name
-      image {
+      digimon_image {
         childImageSharp {
           fixed(width: 75) {
             ...GatsbyImageSharpFixed
