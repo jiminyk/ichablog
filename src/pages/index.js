@@ -23,13 +23,13 @@ const IndexPage = ({ data }) => (
 export default IndexPage
 
 export const pageQuery = graphql`  
-  query IndexQuery(
-    sort: {
-      fields: [id]
-      order: ASC
-    }
-  ) {
-    allStrapiDigimon {
+  query IndexQuery {
+    allStrapiDigimon(
+      sort: {
+        fields: [id]
+        order: ASC
+      }
+    ) {
       edges {
         node {
           id
