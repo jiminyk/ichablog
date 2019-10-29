@@ -26,7 +26,7 @@ export const pageQuery = graphql`
   query IndexQuery {
     allStrapiDigimon(
       sort: {
-        fields: [id]
+        fields: id
         order: ASC
       }
     ) {
